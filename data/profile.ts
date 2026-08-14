@@ -47,7 +47,7 @@ export const profile = {
   initials: "crg",
   location: "México",
   githubUsername: "DanteXhunter",
-  avatar: "/avatar.svg",
+  avatar: "/avatar.jpeg",
 
   // Titular de la portada.
   headline: "Desarrollador de software, estudiante y creador",
@@ -74,7 +74,7 @@ export const profile = {
     "Actualmente desarrollo un sistema académico full-stack y estudio análisis de datos con Python. En paralelo mantengo este portafolio como espacio para documentar lo que voy construyendo.",
 
   resumeUrl: "/cv.pdf",
-  email: "dantexhn@gmail.com",
+  email: "rojascr9091@gmail.com",
 
   socials: [
     { name: "GitHub", url: "https://github.com/DanteXhunter", icon: SiGithub },
@@ -82,7 +82,7 @@ export const profile = {
     { name: "LinkedIn", url: "https://www.linkedin.com/", icon: FaLinkedinIn },
     { name: "GitLab", url: "https://gitlab.com/", icon: SiGitlab },
     { name: "Instagram", url: "https://www.instagram.com/", icon: SiInstagram },
-    { name: "Correo", url: "mailto:dantexhn@gmail.com", icon: SiGmail },
+    { name: "Correo", url: "mailto:rojascr9091@gmail.com", icon: SiGmail },
   ] satisfies SocialLink[],
 
   skills: [

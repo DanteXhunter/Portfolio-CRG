@@ -1,14 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { name, tagline, logo, url } = project;
+  const { slug, name, tagline, logo } = project;
 
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noreferrer"
+    <Link
+      href={`/projects/${slug}`}
       className="flex items-center gap-x-4 rounded-lg border border-transparent bg-surface p-4 duration-300 hover:border-border-hover"
     >
       <Image
@@ -23,6 +22,6 @@ export default function ProjectCard({ project }: { project: Project }) {
         <h2 className="mb-1 text-lg tracking-wide">{name}</h2>
         <div className="text-sm text-muted">{tagline}</div>
       </div>
-    </a>
+    </Link>
   );
 }
