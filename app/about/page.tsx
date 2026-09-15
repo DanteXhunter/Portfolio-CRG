@@ -83,7 +83,8 @@ export default function AboutPage() {
                   Ver currículum <BiLinkExternal className="text-base" />
                 </a>
                 <a
-                  href={`${profile.resumeUrl}?dl=${profile.name}-cv.pdf`}
+                  href={profile.resumeUrl}
+                  download="Cristopher-Rojas-Garcia-CV.pdf"
                   className="flex basis-[10%] items-center justify-center rounded-md border border-transparent bg-surface py-3 text-center text-lg text-accent duration-300 hover:border-border-hover hover:underline"
                   title="Descargar currículum"
                 >

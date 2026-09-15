@@ -28,14 +28,34 @@ export default function JobList() {
       <div className="grid gap-x-6 gap-y-10 md:grid-cols-2">
         {jobs.map(({ id, company, role, logo, url, startDate, endDate, description }) => (
           <div key={id} className="flex items-start gap-x-4">
-            <a
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              className="shrink-0 rounded-md border border-border bg-surface p-2 duration-300 hover:border-border-hover"
-            >
-              <Image src={logo} width={44} height={44} alt={company} unoptimized className="rounded" />
-            </a>
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="shrink-0 rounded-md border border-border bg-surface p-2 duration-300 hover:border-border-hover"
+              >
+                <Image
+                  src={logo}
+                  width={44}
+                  height={44}
+                  alt={company}
+                  unoptimized
+                  className="rounded"
+                />
+              </a>
+            ) : (
+              <div className="shrink-0 rounded-md border border-border bg-surface p-2">
+                <Image
+                  src={logo}
+                  width={44}
+                  height={44}
+                  alt={company}
+                  unoptimized
+                  className="rounded"
+                />
+              </div>
+            )}
 
             <div className="space-y-1">
               <h3 className="font-display text-lg font-semibold tracking-tight">{company}</h3>
@@ -43,7 +63,9 @@ export default function JobList() {
               <p className="text-xs uppercase tracking-wide text-icon">
                 {formatPeriod(startDate, endDate)}
               </p>
-              <p className="pt-1 text-sm leading-relaxed text-muted">{description}</p>
+              <p className="whitespace-pre-line pt-1 text-sm leading-relaxed text-muted">
+                {description}
+              </p>
             </div>
           </div>
         ))}
