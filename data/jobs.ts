@@ -14,23 +14,22 @@ export type Job = {
 export const jobs: Job[] = [
   {
     id: "practicas",
-    company: "Nombre de la empresa",
-    role: "Desarrollador de software",
-    logo: "/projects/sistema-academico.svg",
-    url: "https://example.com",
-    startDate: "2025-01",
+    company: "Carnes del Bajío",
+    role: "Coordinador de operaciones y sistemas",
+    logo: "/logos/carnes_del_bajio.png",
+    startDate: "2023-02",
     endDate: undefined,
     description:
-      "Descripción breve de tus responsabilidades y de lo que construiste ahí. Dos o tres líneas bastan.",
+      "Participación en distintas áreas de la operación: reparto, almacén, producción, supervisión, diseño de marca y administración.\nActualmente en dirección operativa y desarrollo de sistemas internos.",
   },
   {
     id: "freelance",
-    company: "Proyectos independientes",
-    role: "Desarrollador freelance",
-    logo: "/projects/unidad-residencial.svg",
-    startDate: "2024-06",
-    endDate: "2024-12",
+    company: "Eafit",
+    role: "Pasante",
+    logo: "/logos/eafit.png",
+    startDate: "2026-06",
+    endDate: "2026-07",
     description:
-      "Desarrollo de sitios y sistemas a medida para clientes pequeños, desde el análisis de requerimientos hasta el despliegue.",
+      "Desarrollo de aplicación web conversacional que convierte imágenes de esquemáticos eléctricos en instrucciones paso a paso para armar circuitos en una protoboard física",
   },
 ];

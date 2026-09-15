@@ -17,11 +17,13 @@ import {
   SiPostman,
   SiDocker,
   SiVercel,
-  SiGitlab,
+  SiCloudflare,
+  SiRailway,
+  SiSupabase,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 // El set de Simple Icons ya no incluye LinkedIn.
-import { FaLinkedinIn } from "react-icons/fa6";
+import { FaAws, FaLinkedinIn, FaPalette } from "react-icons/fa6";
 
 export type SocialLink = {
   name: string;
@@ -54,24 +56,24 @@ export const profile = {
 
   // Párrafo bajo el titular en la portada (2 líneas aprox.).
   intro:
-    "Soy Cristopher Rojas, desarrollador enfocado en construir aplicaciones web y sistemas de información que resuelvan problemas reales, con especial interés en el backend y los datos.",
+    "Soy Cristopher Rojas, desarrollador enfocado en construir aplicaciones web y sistemas de información que resuelvan problemas reales, con especial interés en el backend, cloud y los datos.",
 
   // Titular de la página "Sobre mí".
   aboutHeadline: "Soy Cristopher. Vivo en México, donde construyo software.",
 
   // Presentación larga en "Sobre mí". Cada elemento es un párrafo.
   aboutParagraphs: [
-    "Soy desarrollador de software con interés en el desarrollo web full-stack, las bases de datos y el análisis de datos. Aprendí programando proyectos propios y llevándolos de la idea al despliegue, que es donde de verdad se entiende cómo encajan las piezas.",
-    "Me interesa el trabajo que se sostiene con el tiempo: código legible, decisiones documentadas y sistemas que otra persona pueda retomar sin sufrir. Cuando no estoy programando, suelo estar aprendiendo algo nuevo o desarmando alguna herramienta para ver cómo funciona por dentro.",
+    "Soy estudiante de último semestre de Ingeniería de Software y Sistemas Computacionales. Combino mi formación técnica con cuatro años de experiencia en la operación de una empresa de distribución de carne, donde pasé por distintas áreas hasta llegar a la dirección operativa y al desarrollo de sistemas internos.",
+    "Esa experiencia me enseñó a entender cómo funciona una empresa antes de proponer una solución: escuchar al cliente, reconocer sus necesidades y coordinar al equipo para construir algo que realmente le sea útil. Fuera del trabajo disfruto los videojuegos, el manga, la lectura, jugar voleibol y salir de fiesta.",
   ],
 
   // Cita destacada al final de la biografía.
   quote:
-    "Si me ves por ahí, no dudes en saludar. Siempre estoy dispuesto a hablar de proyectos, bases de datos o de por qué tu lenguaje favorito es mejor que el mío. ⚡",
+    "Las mejores conversaciones empiezan con una película, una situación hipotética o una pregunta ética que no tiene una respuesta sencilla.",
 
   // Sección "En qué estoy trabajando".
   currently:
-    "Actualmente desarrollo un sistema académico full-stack y estudio análisis de datos con Python. En paralelo mantengo este portafolio como espacio para documentar lo que voy construyendo.",
+    "Actualmente mi enfoque principal está en prepararme para el examen AWS Certified AI Practitioner (AIF-C01), profundizando en fundamentos de inteligencia artificial, aprendizaje automático y servicios de IA de AWS. En paralelo desarrollo un sistema académico full-stack y mantengo este portafolio como espacio para documentar lo que voy construyendo.",
 
   resumeUrl: "/cv.pdf",
   email: "rojascr9091@gmail.com",
@@ -79,22 +81,25 @@ export const profile = {
   socials: [
     { name: "GitHub", url: "https://github.com/DanteXhunter", icon: SiGithub },
     // TODO: reemplazar por tus perfiles reales.
-    { name: "LinkedIn", url: "https://www.linkedin.com/", icon: FaLinkedinIn },
-    { name: "GitLab", url: "https://gitlab.com/", icon: SiGitlab },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/cristopher-rojas-garcia-72b9a5343",
+      icon: FaLinkedinIn,
+    },
     { name: "Instagram", url: "https://www.instagram.com/", icon: SiInstagram },
     { name: "Correo", url: "mailto:rojascr9091@gmail.com", icon: SiGmail },
   ] satisfies SocialLink[],
 
   skills: [
     {
-      title: "Atención al detalle",
+      title: "Liderazgo y coordinación",
       description:
-        "Cuido la coherencia de una interfaz y la claridad de un esquema de datos con el mismo criterio: si algo se ve improvisado, normalmente lo está.",
+        "Tengo experiencia coordinando la operación, distribuyendo responsabilidades y ayudando a que el equipo avance con objetivos claros.",
     },
     {
-      title: "Trabajo en equipo",
+      title: "Visión de producto y empatía con el cliente",
       description:
-        "Me acomodo bien a los proyectos donde hay que ponerse de acuerdo: reviso código ajeno con calma y explico mis decisiones sin dar por sentado el contexto.",
+        "Procuro entender primero el negocio y a las personas que usarán una solución para traducir sus necesidades en decisiones prácticas para el equipo.",
     },
     {
       title: "Autonomía",
@@ -120,12 +125,16 @@ export const profile = {
     { name: "Git", description: "Control de versiones", url: "https://git-scm.com", icon: SiGit },
     { name: "Postman", description: "Pruebas de APIs", url: "https://www.postman.com", icon: SiPostman },
     { name: "Figma", description: "Diseño de interfaces", url: "https://www.figma.com", icon: SiFigma },
+    { name: "Canva", description: "Diseño rápido de material visual", url: "https://www.canva.com", icon: FaPalette },
     { name: "Docker", description: "Entornos reproducibles", url: "https://www.docker.com", icon: SiDocker },
   ] satisfies StackItem[],
 
   platforms: [
     { name: "GitHub", description: "Donde vive mi código", url: "https://github.com/DanteXhunter", icon: SiGithub },
-    { name: "GitLab", description: "Repositorios de la escuela", url: "https://gitlab.com", icon: SiGitlab },
+    { name: "AWS", description: "Cloud e inteligencia artificial", url: "https://aws.amazon.com", icon: FaAws },
+    { name: "Cloudflare", description: "DNS, CDN y despliegue web", url: "https://www.cloudflare.com", icon: SiCloudflare },
+    { name: "Railway", description: "Despliegue de servicios", url: "https://railway.com", icon: SiRailway },
+    { name: "Supabase", description: "PostgreSQL y servicios backend", url: "https://supabase.com", icon: SiSupabase },
     { name: "Vercel", description: "Despliegue de proyectos web", url: "https://vercel.com", icon: SiVercel },
   ] satisfies StackItem[],
 };

@@ -20,7 +20,7 @@ export type Project = {
   name: string;
   tagline: string;
   logo: string;
-  repoUrl: string;
+  repoUrl?: string;
   demoUrl?: string;
   // Ej. "En desarrollo". Se muestra como badge en la página de detalle.
   status?: string;
@@ -117,6 +117,18 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "monarch",
+    name: "Monarch",
+    tagline: "Inteligencia de negocios para Carnes del Bajío",
+    logo: "/logos/monarch.png",
+    status: "En desarrollo",
+
+    description: [
+      "Monarch es una solución de inteligencia de negocios (BI) para Carnes del Bajío. Su objetivo es convertir la información de la empresa en indicadores y visualizaciones claras que faciliten el seguimiento de la operación y la toma de decisiones.",
+      "El proyecto se encuentra actualmente en desarrollo. Conforme avance, esta página incorporará más información sobre sus funciones, arquitectura y stack técnico.",
+    ],
+  },
+  {
     slug: "sistema-academico",
     name: "Sistema Académico",
     tagline: "Gestión escolar con API REST",
@@ -136,12 +148,5 @@ export const projects: Project[] = [
     tagline: "Registro de series y episodios vistos",
     logo: "/projects/anime-tracking.svg",
     repoUrl: "https://github.com/DanteXhunter/AnimeTracking",
-  },
-  {
-    slug: "data-mining",
-    name: "Data Mining",
-    tagline: "Análisis y modelos sobre datos públicos",
-    logo: "/projects/data-mining.svg",
-    repoUrl: "https://github.com/DanteXhunter",
   },
 ];

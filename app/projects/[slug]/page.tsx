@@ -95,15 +95,17 @@ export default async function ProjectPage({
       </header>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <a
-          href={repoUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm duration-300 hover:border-border-hover"
-        >
-          <FiGithub className="size-4" aria-hidden />
-          Ver código
-        </a>
+        {repoUrl && (
+          <a
+            href={repoUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm duration-300 hover:border-border-hover"
+          >
+            <FiGithub className="size-4" aria-hidden />
+            Ver código
+          </a>
+        )}
 
         {demoUrl && (
           <a
