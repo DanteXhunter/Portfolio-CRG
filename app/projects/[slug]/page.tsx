@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowLeft, FiArrowUpRight, FiClock, FiGithub, FiTool } from "react-icons/fi";
+import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -25,6 +26,12 @@ export async function generateMetadata({
   return {
     title: project.name,
     description: project.tagline,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      url: `/projects/${project.slug}`,
+      title: `${project.name} — ${profile.name}`,
+      description: project.tagline,
+    },
   };
 }
 
@@ -66,7 +73,13 @@ export default async function ProjectPage({
       <header className="flex flex-col gap-6 sm:flex-row sm:items-center">
         {mascot ? (
           <div className="shrink-0 rounded-xl bg-white p-2 shadow-sm">
-            <Image src={mascot} width={72} height={72} alt={`Mascota de ${name}`} unoptimized />
+            <Image
+              src={mascot}
+              width={72}
+              height={72}
+              alt={`Mascota de ${name}`}
+              className="size-[72px] object-contain"
+            />
           </div>
         ) : (
           <Image
@@ -74,8 +87,7 @@ export default async function ProjectPage({
             width={72}
             height={72}
             alt={name}
-            unoptimized
-            className="shrink-0 rounded-lg bg-border p-2"
+            className="size-[72px] shrink-0 rounded-lg bg-border object-contain p-2"
           />
         )}
 
@@ -147,10 +159,9 @@ export default async function ProjectPage({
           <Image
             src={screenshot}
             width={1600}
-            height={1000}
+            height={1041}
             alt={`Captura de ${name}`}
-            unoptimized
-            className="w-full"
+            className="h-auto w-full"
           />
         </div>
       )}
@@ -229,7 +240,6 @@ export default async function ProjectPage({
                     width={40}
                     height={40}
                     alt={affName}
-                    unoptimized
                     className="size-10 shrink-0 rounded-md object-contain"
                   />
                   <span className="text-sm">{affName}</span>

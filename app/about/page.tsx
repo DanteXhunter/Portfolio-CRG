@@ -7,6 +7,12 @@ import { profile } from "@/data/profile";
 export const metadata: Metadata = {
   title: "Sobre mí",
   description: "Conoce más sobre mis habilidades, experiencia y formación técnica.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    url: "/about",
+    title: `Sobre mí — ${profile.name}`,
+    description: "Conoce más sobre mis habilidades, experiencia y formación técnica.",
+  },
 };
 
 export default function AboutPage() {
@@ -68,7 +74,6 @@ export default function AboutPage() {
               width={400}
               height={400}
               alt={`Fotografía de ${profile.name}`}
-              unoptimized
               priority
             />
 

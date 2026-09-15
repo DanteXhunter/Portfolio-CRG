@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useMounted } from "@/lib/use-mounted";
 
 function MoonIcon() {
   return (
@@ -34,9 +34,7 @@ function SunIcon() {
 
 export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => setHasMounted(true), []);
+  const hasMounted = useMounted();
 
   if (!hasMounted) {
     return (

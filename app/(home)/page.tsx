@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import ContributionGraph from "@/components/ContributionGraph";
 import HeroSvg from "@/components/HeroSvg";
 import JobList from "@/components/JobList";
 import SocialLinks from "@/components/SocialLinks";
 import { profile } from "@/data/profile";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    url: "/",
+    title: `${profile.name} — Portafolio`,
+    description: profile.intro,
+  },
+};
 
 export default function Home() {
   return (

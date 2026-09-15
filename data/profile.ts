@@ -2,7 +2,6 @@ import type { IconType } from "react-icons";
 import {
   SiGithub,
   SiGmail,
-  SiInstagram,
   SiJavascript,
   SiTypescript,
   SiReact,
@@ -80,13 +79,11 @@ export const profile = {
 
   socials: [
     { name: "GitHub", url: "https://github.com/DanteXhunter", icon: SiGithub },
-    // TODO: reemplazar por tus perfiles reales.
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/cristopher-rojas-garcia-72b9a5343",
       icon: FaLinkedinIn,
     },
-    { name: "Instagram", url: "https://www.instagram.com/", icon: SiInstagram },
     { name: "Correo", url: "mailto:rojascr9091@gmail.com", icon: SiGmail },
   ] satisfies SocialLink[],
 

@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className="z-30 mb-10 border-b border-border px-6 py-6 text-sm md:px-16">
       <div className="mx-auto flex max-w-6xl items-center justify-between">
         <Link href="/" aria-label="Inicio">
-          <Image src="/logo.svg" width={35} height={35} alt="Logotipo" priority unoptimized />
+          <Image src="/logo.svg" width={35} height={35} alt="Logotipo" priority />
         </Link>
 
         <nav>

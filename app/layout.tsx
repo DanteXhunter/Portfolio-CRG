@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
 import { profile } from "@/data/profile";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 const incognito = localFont({
   variable: "--font-incognito",
@@ -23,11 +18,29 @@ const incognito = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${profile.name} — Portafolio`,
     template: `%s — ${profile.name}`,
   },
   description: profile.intro,
+  applicationName: `${profile.name} — Portafolio`,
+  authors: [{ name: profile.name }],
+  creator: profile.name,
+  icons: { icon: "/logo.svg" },
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: "/",
+    siteName: `${profile.name} — Portafolio`,
+    title: `${profile.name} — Portafolio`,
+    description: profile.intro,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.name} — Portafolio`,
+    description: profile.intro,
+  },
 };
 
 export default function RootLayout({
@@ -39,7 +52,7 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${inter.variable} ${incognito.variable}`}
+      className={incognito.variable}
     >
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
