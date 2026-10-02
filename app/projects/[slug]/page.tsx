@@ -56,6 +56,7 @@ export default async function ProjectPage({
     screenshot,
     mascot,
     affiliations,
+    affiliationTitle,
     team,
     overleafUrl,
   } = project;
@@ -229,7 +230,7 @@ export default async function ProjectPage({
       {affiliations && (
         <section className="mt-12">
           <h2 className="mb-5 font-display text-xl font-semibold tracking-tight">
-            Con el respaldo de
+            {affiliationTitle ?? "Con el respaldo de"}
           </h2>
           <div className="flex flex-wrap gap-4">
             {affiliations.map(({ name: affName, logo: affLogo, url }) => {

@@ -72,7 +72,7 @@ export const profile = {
 
   // Sección "En qué estoy trabajando".
   currently:
-    "Actualmente mi enfoque principal está en prepararme para el examen AWS Certified AI Practitioner (AIF-C01), profundizando en fundamentos de inteligencia artificial, aprendizaje automático y servicios de IA de AWS. En paralelo desarrollo un sistema académico full-stack y mantengo este portafolio como espacio para documentar lo que voy construyendo.",
+    "Actualmente trabajo principalmente en Monarch, una plataforma privada de inteligencia de negocios para Carnes del Bajío que ya se encuentra desplegada. Estoy integrando progresivamente los datos operativos de MyBusiness y convirtiéndolos en tableros, alertas y señales comerciales que ayuden a tomar mejores decisiones. Además, ya obtuve la certificación AWS Certified AI Practitioner (AIF-C01), reforzando mis fundamentos de inteligencia artificial, aprendizaje automático y servicios de IA de AWS.",
 
   resumeUrl: "/cv.pdf",
   email: "rojascr9091@gmail.com",
