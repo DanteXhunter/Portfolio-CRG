@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import { profile } from "@/data/profile";
+import { useMounted } from "@/lib/use-mounted";
 
 type Day = { date: string; count: number; level: 0 | 1 | 2 | 3 | 4 };
 
@@ -47,14 +48,11 @@ export default function ContributionGraph() {
   const [days, setDays] = useState<Day[]>([]);
   const [total, setTotal] = useState<number | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const { resolvedTheme } = useTheme();
-
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     let active = true;
-    setStatus("loading");
 
     fetch(
       `https://github-contributions-api.jogruber.de/v4/${profile.githubUsername}?y=${year ?? "last"}`
@@ -81,6 +79,11 @@ export default function ContributionGraph() {
   const weeks = useMemo(() => toWeeks(days), [days]);
   const colors = scale[mounted && resolvedTheme === "light" ? "light" : "dark"];
   const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
+
+  function selectYear(value: number) {
+    setStatus("loading");
+    setYear(value === year ? null : value);
+  }
 
   // Etiqueta de mes en la primera semana donde arranca cada mes.
   const monthLabels = weeks.map((week, index) => {
@@ -168,7 +171,7 @@ export default function ContributionGraph() {
               <button
                 key={value}
                 type="button"
-                onClick={() => setYear(value === year ? null : value)}
+                onClick={() => selectYear(value)}
                 title={`Ver la gráfica del año ${value}`}
                 className={`rounded-lg border border-transparent px-4 py-2 text-center text-sm font-medium duration-100 ${
                   isActive

@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import PageHeading from "@/components/PageHeading";
 import ProjectCard from "@/components/ProjectCard";
+import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Proyectos",
   description: "Explora los proyectos que he construido.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    url: "/projects",
+    title: `Proyectos — ${profile.name}`,
+    description: "Explora los proyectos que he construido.",
+  },
 };
 
 export default function ProjectsPage() {

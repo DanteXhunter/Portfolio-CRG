@@ -40,8 +40,7 @@ export default function JobList() {
                   width={44}
                   height={44}
                   alt={company}
-                  unoptimized
-                  className="rounded"
+                  className="size-11 rounded object-contain"
                 />
               </a>
             ) : (
@@ -51,8 +50,7 @@ export default function JobList() {
                   width={44}
                   height={44}
                   alt={company}
-                  unoptimized
-                  className="rounded"
+                  className="size-11 rounded object-contain"
                 />
               </div>
             )}

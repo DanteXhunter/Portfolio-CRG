@@ -15,8 +15,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         width={60}
         height={60}
         alt={name}
-        unoptimized
-        className="rounded-md bg-border p-2"
+        className="size-[60px] rounded-md bg-border object-contain p-2"
       />
       <div>
         <h2 className="mb-1 text-lg tracking-wide">{name}</h2>

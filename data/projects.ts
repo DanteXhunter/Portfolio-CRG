@@ -32,6 +32,7 @@ export type Project = {
   screenshot?: string;
   mascot?: string;
   affiliations?: Affiliation[];
+  affiliationTitle?: string;
   team?: TeamMember[];
   overleafUrl?: string | null;
 };
@@ -96,12 +97,45 @@ export const projects: Project[] = [
     overleafUrl: null,
   },
   {
+    slug: "monarch",
+    name: "Monarch",
+    tagline: "Inteligencia de negocios para Carnes del Bajío",
+    logo: "/logos/monarch.png",
+    repoUrl: "https://github.com/DanteXhunter/monarch-bi.git",
+    demoUrl: "https://monarchbi.world/login",
+    status: "Desplegado · en evolución",
+
+    description: [
+      "Monarch es una aplicación privada de inteligencia de negocios para Carnes del Bajío, una empresa familiar de distribución de alimentos al mayoreo en León, Guanajuato. Convierte los datos cotidianos de venta en información clara y accionable: un resumen ejecutivo y vistas de ventas, clientes, productos y alertas permiten comparar periodos, entender variaciones e identificar oportunidades de seguimiento comercial.",
+      "El proyecto ya está desplegado con acceso privado y autenticación de usuarios. También incluye el primer puente con MyBusiness: un lector local de solo lectura obtiene ventas y partidas desde SQL Server, y Monarch las valida, recibe y almacena de forma transaccional en PostgreSQL, evitando duplicados. Mientras se concilia el histórico real, el tablero utiliza datos sintéticos solo para desarrollo y demostración.",
+    ],
+
+    techStack: [
+      { layer: "Aplicación web", items: ["Next.js 16", "React 19", "TypeScript"] },
+      { layer: "Datos", items: ["PostgreSQL", "node-postgres (pg)", "SQL Server / MyBusiness"] },
+      { layer: "Integración", items: ["API REST", "PowerShell", "Zod"] },
+      { layer: "Seguridad", items: ["Sesiones HTTP-only", "scrypt", "CSP", "HSTS"] },
+      { layer: "Despliegue", items: ["Railway", "Dominio personalizado"] },
+      { layer: "Calidad", items: ["Node.js Test Runner", "Pruebas de integración", "TypeScript"] },
+    ],
+
+    screenshot: "/projects/monarch-dashboard.png",
+
+    affiliationTitle: "Hecho para",
+    affiliations: [
+      {
+        name: "Carnes del Bajío",
+        logo: "/logos/carnes_del_bajio.png",
+      },
+    ],
+  },
+  {
     slug: "hielon-whatsapp",
     name: "Hielon de León — Automatización de WhatsApp",
     tagline: "Bot de pedidos y recordatorios por WhatsApp",
     logo: "/logos/logo_hielon.png",
     repoUrl: "https://github.com/DanteXhunter/Automatizacion-WS-Hielon",
-    status: "En desarrollo",
+    status: "En pausa",
 
     description: [
       "Hielon de León es una fabricadora de hielo en León, Guanajuato. El servicio que le desarrollo tiene dos piezas: un bot de WhatsApp que recibe pedidos, manda recordatorios matutinos y deriva la conversación a una persona cuando hace falta, y un panel administrativo donde el dueño y su equipo consultan pedidos, chats y métricas.",
@@ -114,18 +148,6 @@ export const projects: Project[] = [
       { layer: "Integraciones", items: ["WhatsApp Cloud API (Meta)", "httpx", "n8n"] },
       { layer: "Despliegue", items: ["Railway"] },
       { layer: "Desarrollo local", items: ["ngrok"] },
-    ],
-  },
-  {
-    slug: "monarch",
-    name: "Monarch",
-    tagline: "Inteligencia de negocios para Carnes del Bajío",
-    logo: "/logos/monarch.png",
-    status: "En desarrollo",
-
-    description: [
-      "Monarch es una solución de inteligencia de negocios (BI) para Carnes del Bajío. Su objetivo es convertir la información de la empresa en indicadores y visualizaciones claras que faciliten el seguimiento de la operación y la toma de decisiones.",
-      "El proyecto se encuentra actualmente en desarrollo. Conforme avance, esta página incorporará más información sobre sus funciones, arquitectura y stack técnico.",
     ],
   },
   {
